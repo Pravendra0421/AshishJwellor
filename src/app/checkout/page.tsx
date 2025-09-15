@@ -305,7 +305,7 @@ function CheckoutPageContent() {
         } else {
           throw new Error("Cannot determine order source.");
         }
-        router.push(`/order-confirmation?orderId=${finalOrderId}`);
+        router.push(`/order-confirmation/${finalOrderId}`);
       } catch (err: any) {
         setError(err.message || "Failed to place order.");
         setProcessing(false);
@@ -373,7 +373,7 @@ function CheckoutPageContent() {
               } else {
                 throw new Error("Cannot determine order source.");
               }
-              router.push(`/order-confirmation?orderId=${finalOrderId}`);
+              router.push(`/order-confirmation/${finalOrderId}`);
             } catch (err: any) {
               setError(err.message || "Order creation failed after payment.");
               setProcessing(false);

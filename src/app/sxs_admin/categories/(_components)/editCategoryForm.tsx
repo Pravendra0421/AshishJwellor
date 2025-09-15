@@ -6,7 +6,7 @@ import { CategoryApiRepository } from "@/infrastructure/frontend/repositories/Ca
 import { ImageApiRepository } from "@/infrastructure/frontend/repositories/ImageRepository.api";
 import { UpdateCategoryUseCase } from "@/core/usecases/UpdateCategory.usecase";
 import type { CategoryEntity } from "@/core/entities/category.entity";
-
+import { ScrollArea } from "@/components/ui/scroll-area";
 interface CategoryEditFormProps {
   initialCategory: CategoryEntity;
   categoryId: string;
