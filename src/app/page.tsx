@@ -36,9 +36,9 @@ const Hero = async () => {
 
       <div className="w-[75%] mx-auto">
         <Products products={data.slice(0, 8)} categories={categories} />
-        <BlackFridayHero homepageSection={homepageContent} />
+        {/* <BlackFridayHero homepageSection={homepageContent} /> */}
         <CategoryPromoSection homepageSection={homepageContent} />
-        <EssentialHero homepageSection={homepageContent} />
+        {/* <EssentialHero homepageSection={homepageContent} /> */}
         <Look homepageSection={homepageContent} />
         <Category categories={categories.slice(0, 4)} />
         <Essential2 homepageSection={homepageContent} />

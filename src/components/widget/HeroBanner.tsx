@@ -6,43 +6,66 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel"
-import { slides } from './slideData'
 import Image from 'next/image'
-import { HomepageEntity,CarouselSection } from '@/core/entities/HomePage.entity';
+import { HomepageEntity, CarouselSection } from '@/core/entities/HomePage.entity'
+
 interface Props {
   homepageSection: HomepageEntity | null;
 }
+
 const HeroBanner = ({ homepageSection }: Props) => {
   const carouselSection = homepageSection?.sections?.find(
     (section): section is CarouselSection => section.type === 'carousel'
   );
+
   const slidesToRender = carouselSection?.images || [];
+
   return (
     <Carousel
       opts={{ align: "start", loop: true }}
-      className="w-full h-[80vh] relative"
+      className="w-full relative"
     >
       <CarouselContent>
         {slidesToRender.map((item, index) => (
           <CarouselItem key={index} className="w-full">
-            <div className="relative w-full h-[80vh] overflow-hidden">
+            <div
+              className="
+                relative w-full
+                h-[40vh] sm:h-[50vh] md:h-[60vh] lg:h-[80vh]
+                overflow-hidden
+              "
+            >
               {item.imageUrl ? (
                 <Image
                   src={item.imageUrl}
-                  alt={item.alt}
+                  alt={item.alt || 'Carousel image'}
                   fill
-                  className="object-cover"
+                  priority={index === 0}
+                  className="object-cover object-center"
                 />
               ) : null}
             </div>
           </CarouselItem>
         ))}
-
       </CarouselContent>
-      <CarouselPrevious className="absolute left-4 top-1/2 -translate-y-1/2 z-10" />
-       <CarouselNext className="absolute right-4 top-1/2 -translate-y-1/2 z-10" />
+
+      {/* Previous Button */}
+      <CarouselPrevious
+        className="
+          absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-10
+          p-2 sm:p-3 md:p-4
+        "
+      />
+
+      {/* Next Button */}
+      <CarouselNext
+        className="
+          absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 z-10
+          p-2 sm:p-3 md:p-4
+        "
+      />
     </Carousel>
   )
 }
 
-export default HeroBanner;
+export default HeroBanner

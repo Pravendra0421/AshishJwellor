@@ -41,28 +41,7 @@ const Look = ({ homepageSection }: Props) => {
           />
         </div>
       </div>
-      <div className='w-full md:w-1/4 p-4 md:p-8 flex flex-col items-center justify-center '>
-        <div className='flex flex-col items-center text-center'>
-          <div className='flex justify-center items-center overflow-hidden mb-4 rounded-md' style={{ width: '200px', height: '400px' }}> {/* Explicit dimensions for the container */}
-            <Image
-              src={Look2} 
-              alt="Rosewood DLMN Knotted High-Low Top"
-              width={300} 
-              height={400} 
-              objectFit="contain" 
-              className="w-full h-full" 
-            />
-          </div>
-
-          <h3 className='text-base font-medium text-gray-700 leading-tight mb-1' style={{ color: '#5B4B43' }}>
-            Rosewood DLMN Knotted High-Low Top
-          </h3>
-          {/* Product Price */}
-          <p className='text-lg font-bold text-gray-900' style={{ color: '#5B4B43' }}>
-            $46
-          </p>
-        </div>
-      </div>
+     
     </div>
   );
 };
