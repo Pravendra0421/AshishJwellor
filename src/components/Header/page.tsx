@@ -59,7 +59,7 @@ const Header = ({ header }: HeaderProps) => {
     <header className="font-sans">
       {/* Top Banner */}
       <div className="bg-orange-200 text-center text-xs py-1">
-        <span className="font-semibold">HASSLE-FREE RETURNS</span> 30-day
+        <span className="font-semibold">HASSLE-FREE RETURNS</span> 5-day
         postage paid returns
       </div>
 
